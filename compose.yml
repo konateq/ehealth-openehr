@@ -1,0 +1,40 @@
+services:
+  wiremock:
+    image: wiremock/wiremock:3.13.0
+    container_name: wiremock
+    ports:
+      - "9080:8080"
+    volumes:
+      - ./wiremock/mappings:/home/wiremock/mappings
+      - ./wiremock/__files:/home/wiremock/__files
+  backend:
+    image: ghcr.io/konateq/ehealth-portal-backend:latest
+    container_name: ehealth-portal-backend
+    ports:
+      - "8092:8080"
+      - "5443:8443"
+      - "5004:5004"
+    env_file:
+      - .env
+    volumes:
+      - ./ehealth-portal/certificates:/opt/openncp-configuration/keystore
+      - tsam-exporter-data:/opt/openncp-configuration/EpsosRepository
+    networks:
+      - openncp
+  frontend:
+    image: ghcr.io/konateq/ehealth-portal-frontend:latest
+    container_name: ehealth-portal-frontend
+    ports:
+      - "8093:8080"
+    depends_on:
+      - backend
+    networks:
+      - openncp
+networks:
+  openncp:
+    name: openncp
+    external: true
+volumes:
+  tsam-exporter-data:
+    name: tsam-exporter-data
+    external: true

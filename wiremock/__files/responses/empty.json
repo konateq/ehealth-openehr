@@ -1,0 +1,15 @@
+{
+  "resourceType": "Bundle",
+  "id": "{{randomValue type='UUID'}}",
+  "meta": {
+    "lastUpdated": "{{now format='yyyy-MM-dd\'T\'HH:mm:ss.SSSXXX'}}"
+  },
+  "type": "searchset",
+  "total": 0,
+  "link": [
+    {
+      "relation": "self",
+      "url": "{{request.url}}"
+    }
+  ]
+}

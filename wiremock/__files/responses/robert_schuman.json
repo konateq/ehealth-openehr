@@ -1,0 +1,71 @@
+{
+  "resourceType": "Bundle",
+  "id": "{{randomValue type='UUID'}}",
+  "meta": {
+    "lastUpdated": "{{now format='yyyy-MM-dd\'T\'HH:mm:ss.SSSXXX'}}"
+  },
+  "type": "searchset",
+  "total": 1,
+  "link": [
+    {
+      "relation": "self",
+      "url": "http://localhost:9080/fhir/Patient?https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin|999999999"
+    }
+  ],
+  "entry": [
+    {
+      "fullUrl": "http://localhost:9080/fhir/Patient/e5d10a37-54ac-4adf-b1b5-0c917d802593",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "e5d10a37-54ac-4adf-b1b5-0c917d802593",
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "SS",
+                  "display": "Social Security number"
+                }
+              ]
+            },
+            "system": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin",
+            "value": "999999999"
+          },
+          {
+            "system": "https://openehr.org/ehr/ehr-id",
+            "value": "6fc35086-f530-4a4c-bdad-bbac67bff185"
+          }
+        ],
+        "active": true,
+        "name": [
+          {
+            "use": "official",
+            "text": "Robert Schuman",
+            "family": "Schuman",
+            "given": [
+              "Robert"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1970-01-01",
+        "address": [
+          {
+            "use": "home",
+            "type": "both",
+            "line": [
+              "Rue de la Loi 200"
+            ],
+            "city": "Brussels",
+            "postalCode": "1049",
+            "country": "BE"
+          }
+        ]
+      },
+      "search": {
+        "mode": "match"
+      }
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "method": "GET",
+        "urlPath": "/fhir/metadata"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "bodyFileName": "responses/metadata.json"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPath": "/fhir/Patient"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "bodyFileName": "responses/empty.json",
+        "transformers": [
+          "response-template"
+        ]
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPath": "/fhir/Patient",
+        "queryParameters": {
+          "identifier": {
+            "equalTo": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin|123456789"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "bodyFileName": "responses/fabian_ruiz.json",
+        "transformers": [
+          "response-template"
+        ]
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPath": "/fhir/Patient",
+        "queryParameters": {
+          "identifier": {
+            "equalTo": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin|987654321"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "bodyFileName": "responses/thomas_muller.json",
+        "transformers": [
+          "response-template"
+        ]
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPath": "/fhir/Patient",
+        "queryParameters": {
+          "identifier": {
+            "equalTo": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin|111111111"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "bodyFileName": "responses/zlatan_ibrahimovic.json",
+        "transformers": [
+          "response-template"
+        ]
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPath": "/fhir/Patient",
+        "queryParameters": {
+          "identifier": {
+            "equalTo": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin|999999999"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "bodyFileName": "responses/robert_schuman.json",
+        "transformers": [
+          "response-template"
+        ]
+      }
+    }
+  ]
+}

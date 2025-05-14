@@ -1,0 +1,71 @@
+{
+  "resourceType": "Bundle",
+  "id": "{{randomValue type='UUID'}}",
+  "meta": {
+    "lastUpdated": "{{now format='yyyy-MM-dd\'T\'HH:mm:ss.SSSXXX'}}"
+  },
+  "type": "searchset",
+  "total": 1,
+  "link": [
+    {
+      "relation": "self",
+      "url": "http://localhost:9080/fhir/Patient?https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin|123456789"
+    }
+  ],
+  "entry": [
+    {
+      "fullUrl": "http://localhost:9080/fhir/Patient/d3a8407b-aaf4-4dac-ac09-3004a09c401f",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "d3a8407b-aaf4-4dac-ac09-3004a09c401f",
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "SS",
+                  "display": "Social Security number"
+                }
+              ]
+            },
+            "system": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin",
+            "value": "123456789"
+          },
+          {
+            "system": "https://openehr.org/ehr/ehr-id",
+            "value": "680e2415-bbfe-4b8a-b568-752c62649fd8"
+          }
+        ],
+        "active": true,
+        "name": [
+          {
+            "use": "official",
+            "text": "Fabián Ruiz",
+            "family": "Ruiz",
+            "given": [
+              "Fabián"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1996-04-03",
+        "address": [
+          {
+            "use": "home",
+            "type": "both",
+            "line": [
+              "Carrer del Portal Nou 52"
+            ],
+            "city": "Barcelona",
+            "postalCode": "08003",
+            "country": "ES"
+          }
+        ]
+      },
+      "search": {
+        "mode": "match"
+      }
+    }
+  ]
+}

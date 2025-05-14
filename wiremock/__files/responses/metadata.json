@@ -1,0 +1,37 @@
+{
+  "resourceType": "CapabilityStatement",
+  "id": "0c42758b-518b-4cb7-b2af-9d4143acb83e",
+  "name": "WireMock FHIR Server",
+  "status": "active",
+  "date": "2025-05-14T00:00:00.000+00:00",
+  "publisher": "Not provided",
+  "kind": "instance",
+  "software": {
+    "name": "Wiremock",
+    "version": "3.13.0"
+  },
+  "implementation": {
+    "description": "Wiremock FHIR Server",
+    "url": "http://localhost:9080/fhir"
+  },
+  "fhirVersion": "4.0.1",
+  "format": [
+    "application/json"
+  ],
+  "rest": [
+    {
+      "mode": "server",
+      "resource": [
+        {
+          "type": "Patient",
+          "profile": "http://hl7.org/fhir/StructureDefinition/Patient",
+          "interaction": [
+            {
+              "code": "search-type"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
